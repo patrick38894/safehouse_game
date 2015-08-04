@@ -1,6 +1,11 @@
 static enum type {AGENT, FIELD, OFFICE, RESEARCH, ONCALL};
 
 class EventSelector {
+
+	
+	void addModifier(Modifier m);
+	void removeModifier(String name);
+
 	public List<Modifier> mods;
 
 	public List<List<Event>> chains;
@@ -23,6 +28,10 @@ class EventSelector {
 
 class Modifier {
 	public String name;
+}
+
+
+class StatModifier : Modifier {
 	public Stats s;
 }
 
@@ -48,7 +57,11 @@ class Stats {
 }
 
 class Agent : EventSelector {
+	public List<Modifier> agentMods
 	public Stats s;
+
+	void changeStats(Stats s);
+	int genIntel(Place whereami);
 }
 
 
@@ -57,6 +70,12 @@ class Agent : EventSelector {
 class Place : EventSelector {
 	public List<Agent> agentList;
 
+	void addAgent(Agent a);
+	Agent removeAgent(int idx);
+	Agent removeAgent(String name);
+	Agent getAgent(String name);
+	Agent getAgent(int idx);
+	
 }
 
 abstract class Event {
