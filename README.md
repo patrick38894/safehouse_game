@@ -1,2 +1,2 @@
 # safehouse_game
-spy game
+framework for a multiplayer spy game written in C#. Soon to be combined with the Unity game engine.
