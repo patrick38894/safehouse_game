@@ -13,7 +13,7 @@ class Stats {
                 constitution = cons;
                 health = hp;
         }
-
+	
         public Stats combine(Stats s) {
                 return new Stats(charisma + s.charisma, instinct + s.instinct, intelligence + s.intelligence,
                         constitution + s.constitution, health + s.health);

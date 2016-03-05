@@ -51,6 +51,8 @@ class Place : EventSelector {
 		Console.WriteLine();
 	}
 	
-	public void update(){}
+	public new void update(){
+		base.update();
+	}
 }
 

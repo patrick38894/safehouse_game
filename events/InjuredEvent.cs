@@ -1,18 +1,28 @@
 using System.Collections.Generic;
+using System;
 class InjuredEvent : Event {
-	public string evenType = "agent";
-        protected EventSelector target;
-        public bool generate(ModList mods) {
+        override public bool generate(ModList mods) {
+		int n = 0;
 		if (mods.contains("agent") && !mods.contains("injured"))
-			int n = rand.Next(1,100);	
-			
+			n = rnd.Next(1,100);	
 
-        public void init(EventSelector e){
-		target = e;
+		Console.WriteLine("Generating injured event");
+		if (n > 90)
+			return true;
+		else	
+			//return false;
+			return true; //for testing
+	}
+			
+	public InjuredEvent () {
+		name = "injured event";
+		next = null;
 	}
 
-	public Event next;
-	public Event update(){return null;}
-	public void process(){}
+	override public Event update(){return null;}
+	
+	override public void process(){
+	//	Console.WriteLine("inside of the injured event");
+	}
 }
 

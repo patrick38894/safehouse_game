@@ -25,21 +25,25 @@ class Agent : EventSelector {
 		string [] names = {"bob", "jon", "ben", "sue", "alice", "patty", "russle", "mat"};
 		name = names[idx];
 		agentStats = new Stats(rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), 2);
+		chains.Add(new InjuredEvent());
+		mods.Add(new Modifier("agent"));
 	}
 
-	public Agent(string name, List<Modifier> mods, Stats s) {
-		name = name;
+	public Agent(string n, List<Modifier> mods, Stats s) {
+		name = n;
 		foreach (Modifier m in mods) {
 			mods.Add(m);
 		}
 		agentStats = s;
 	}
 
-	public Agent(string name,  Stats s) {
-		name = name;
+	public Agent(string n,  Stats s) {
+		name = n;
 		agentStats = s;
 	}
 	
-	public void update(){}
+	public new void update(){
+		base.update();
+	}
 }
 

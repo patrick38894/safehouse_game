@@ -9,6 +9,7 @@ class EventSelector {
         public List<Event> chains;
 
         public List<Event> generateEvents() {
+		Console.WriteLine("generating events");
                 List<Event> ret = new List<Event>();
                 foreach (Event e in chains) {
                         if (e.generate(mods)) {

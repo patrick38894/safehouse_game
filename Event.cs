@@ -1,24 +1,28 @@
 using System.Collections.Generic;
+using System;
 abstract class Event {
         //public eventType eventType;
+	public static Random rnd = new Random();
         protected EventSelector target;
 	public string name = "abstract base event";
 	public bool completed = false;
-        public bool generate(List<Modifier> mods){return false;}
+        abstract public bool generate(ModList mods);
 
         public void init(EventSelector e){
 		target = e;
 	}
-
-	public static bool operator ==(Event e1, Event e2) {
-		return (e1.target == e2.target && e1.name == e2.name);
+	/*
+	public override bool Equals(System.Object obj) {
+		if (obj == null)
+			return false;
+		Event e = obj as Event;
+		if ((System.Object) e == null)
+			return false;
+		return e.name == name; //compare by name only
 	}
-
-	public static bool operator !=(Event e1, Event e2) {
-		return !(e1 == e2);
-	}
+	*/
 	public Event next;
-	public Event update(){return null;}
-	public void process(){}
+	abstract public Event update();
+	abstract public void process();
 }
 
