@@ -4,27 +4,36 @@ using System.Collections.Generic;
 class EventSelector {
 
 
-        public List<Modifier> mods;
+        public ModList mods;
 
         public List<Event> chains;
 
-        public Event generateEvent() {
-                /*List<Event> ret = new List<Event>();
-                foreach (List<Event> c in chains) {
-                        Event e = c.First();
-                        if (e == null)
-                                continue;
+        public List<Event> generateEvents() {
+                List<Event> ret = new List<Event>();
+                foreach (Event e in chains) {
                         if (e.generate(mods)) {
                                 e.init(this);
-                                ret.add(e);
+                                ret.Add(e);
                         }
                 }
-                return ret;*/
-		return null; //TODO
+                return ret;
+	}
+	
+	public void update() {
+		List<Event> newChains = new List<Event>();
+		foreach (Event e in chains) {
+			if (e.completed) {
+				if (e.next != null)
+					newChains.Add(e.next);
+			}
+			else
+			newChains.Add(e);
+		}
+		chains = newChains;
 	}
 
 	public EventSelector () {
-		mods = new List<Modifier>();	
+		mods = new ModList();	
 		chains  = new List<Event>();	
 	}
 

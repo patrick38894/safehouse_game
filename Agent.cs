@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System;
 class Agent : EventSelector {
-        public List<Modifier> agentMods;
         public Stats agentStats;
 	public string name;
 	
@@ -10,7 +9,7 @@ class Agent : EventSelector {
 		agentStats.display();
 		Console.WriteLine();
 		Console.WriteLine("modifiers: {");
-		foreach (Modifier m in agentMods)
+		foreach (Modifier m in mods)
 			m.display();
 		Console.WriteLine("}");
 		Console.WriteLine("}");
@@ -20,17 +19,23 @@ class Agent : EventSelector {
         void changeStats(Stats s){}
         int genIntel(Place whereami){return 0;}
 
+	public Agent() { //generate a random agent
+		Random rnd = new Random();
+		int idx = rnd.Next(0,8);
+		string [] names = {"bob", "jon", "ben", "sue", "alice", "patty", "russle", "mat"};
+		name = names[idx];
+		agentStats = new Stats(rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), rnd.Next(1,20) + rnd.Next(1,20), 2);
+	}
+
 	public Agent(string name, List<Modifier> mods, Stats s) {
 		name = name;
-		agentMods = new List<Modifier>();
 		foreach (Modifier m in mods) {
-			agentMods.Add(m);
+			mods.Add(m);
 		}
 		agentStats = s;
 	}
 
 	public Agent(string name,  Stats s) {
-		agentMods = new List<Modifier>();
 		name = name;
 		agentStats = s;
 	}

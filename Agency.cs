@@ -3,16 +3,24 @@ using System.Collections.Generic;
 
 class Agency {
         protected List<Place> places;
-        protected List<Event> currentEvents;
+        protected HashSet<Event> currentEvents;
+	public Place field;
+	public Place office;
+	public Place research;
+	public Place onCall;
 
         public Agency() {
                 places = new List<Place>();
-                places.Add(new Place("field"));
-                places.Add(new Place("office"));
-                places.Add(new Place("research"));
-                places.Add(new Place("onCall"));
+                field = new Place("field");
+                office = new Place("office");
+                research = new Place("research");
+                onCall = new Place("onCall");
+                places.Add(field);
+                places.Add(office);
+                places.Add(research);
+                places.Add(onCall);
 
-                currentEvents = new List<Event>();
+                currentEvents = new HashSet<Event>();
         }
 
 
@@ -25,7 +33,7 @@ class Agency {
 
 
         public void updateAll() {
-		List<Event> nextEvents = new List<Event>();
+		HashSet<Event> nextEvents = new HashSet<Event>();
                 foreach (Event e in currentEvents) {
                         Event x = e.update();
 			if (x != null)
@@ -50,13 +58,15 @@ class Agency {
 
         public void generateEvents() {
                 foreach (Place p in places) {
-                        Event e = p.generateEvent();
-                        if (e != null)
-                                currentEvents.Add(e);
-                        foreach (Agent a in p.agentList) {
-                                e = a.generateEvent();
-                                if (e != null)
-                                        currentEvents.Add(e);
+                        List<Event> es = p.generateEvents();
+                        if (es != null)
+				foreach (Event e in es)
+                                	currentEvents.Add(e);
+                       	foreach (Agent a in p.agentList) {
+                                es = a.generateEvents();
+                                if (es != null)
+					foreach (Event e in es)
+						currentEvents.Add(e);
                         }
                 }
         }
@@ -68,8 +78,21 @@ class Agency {
 	
 	static void Main (string [] args) {
 		Agency agency = new Agency();
+		Agent x = new Agent();
+		Agent y = new Agent();
+		Agent z = new Agent();
+		agency.onCall.addAgent(x);	
+		agency.onCall.addAgent(y);	
+		agency.onCall.addAgent(z);	
 		while (true) {
 			agency.display();
+			foreach (Agent a in agency.onCall.agentList) {
+				agency.field.agentList.Add(a);
+			}
+			foreach (Agent a in agency.field.agentList) {
+				agency.onCall.agentList.Remove(a);
+			}
+			
 			agency.turn();
 			Console.ReadLine();
 		}

@@ -4,17 +4,17 @@ class Place : EventSelector {
         public List<Agent> agentList;
 	public string name;
 
-        void addAgent(Agent a) {
+        public void addAgent(Agent a) {
 		agentList.Add(a);
 	}
 
-        Agent removeAgent(int idx) { 
+        public Agent removeAgent(int idx) { 
 		Agent a = agentList[idx];
 		agentList.RemoveAt(idx);
 		return a;
 	}
 
-        Agent removeAgent(string name) {
+        public Agent removeAgent(string name) {
 		Agent a = null;
 		foreach (Agent aa in agentList)
 			if (a.name == name)
@@ -24,7 +24,7 @@ class Place : EventSelector {
 		return a;
 	}
 	
-        Agent getAgent(string name) {
+        public Agent getAgent(string name) {
 		Agent a = null;
 		foreach (Agent aa in agentList)
 			if (a.name == name)
@@ -32,13 +32,13 @@ class Place : EventSelector {
 		return a;
 	}
 
-        Agent getAgent(int idx) {
+        public Agent getAgent(int idx) {
 		return agentList[idx];
 	}
 
-	public Place (string name) {
+	public Place (string n) {
 		agentList = new List<Agent>();
-		name = name;
+		name = n;
 	}
 	
 	public void display() {
