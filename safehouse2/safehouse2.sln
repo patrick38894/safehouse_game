@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4839A620-8F45-986A-4962-379AEEC31606}") = "safehouse2", "Assembly-CSharp.csproj", "{C6EEE4B4-FB81-6605-9E9B-167D8E87182D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6EEE4B4-FB81-6605-9E9B-167D8E87182D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6EEE4B4-FB81-6605-9E9B-167D8E87182D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6EEE4B4-FB81-6605-9E9B-167D8E87182D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6EEE4B4-FB81-6605-9E9B-167D8E87182D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

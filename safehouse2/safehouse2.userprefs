@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AgentViewbox.cs">
+    <Files>
+      <File FileName="Assets/Scripts/AgentViewbox.cs" Line="17" Column="1" />
+      <File FileName="Assets/Scripts/LocationsPageScr.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Agency.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Place.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Agent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Event.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/EventSelector.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Modifier.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/ModList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/StatModifier.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/core/Stats.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
