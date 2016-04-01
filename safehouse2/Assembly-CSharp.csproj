@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AgentViewbox.cs" />
+     <Compile Include="Assets\Scripts\LocationButtonScr.cs" />
      <Compile Include="Assets\Scripts\LocationsPageScr.cs" />
      <Compile Include="Assets\Scripts\core\Agency.cs" />
      <Compile Include="Assets\Scripts\core\Agent.cs" />
