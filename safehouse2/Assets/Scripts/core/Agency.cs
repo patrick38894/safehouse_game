@@ -20,7 +20,11 @@ public class Agency : MonoBehaviour {
                 places.Add(office);
                 places.Add(research);
                 places.Add(onCall);
-
+			
+		field.subLocations[0].addAgent(new Agent ());
+		field.subLocations[0].addAgent(new Agent ());
+		field.subLocations[1].addAgent(new Agent ());
+				
                 currentEvents = new HashSet<Event>();
         }
 
